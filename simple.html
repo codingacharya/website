@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vantara</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+    <style>
+        :root {
+            --primary-color: #ff5733;
+            --secondary-color: #33c3ff;
+            --accent-color: #ff33a8;
+            --bg-color: #f4f4f4;
+            --text-color: #333;
+        }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+        .navbar {
+            background-color: var(--primary-color);
+        }
+        .btn {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+        .btn:hover {
+            background-color: var(--accent-color);
+        }
+        .footer {
+            background-color: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- Navbar -->
+    <nav class="navbar p-4 text-white flex justify-between items-center">
+        <div class="text-2xl font-bold">VANTARA</div>
+        <ul class="flex space-x-6">
+            <li><a href="#" class="hover:text-gray-300">Home</a></li>
+            <li><a href="#services" class="hover:text-gray-300">Services</a></li>
+            <li><a href="#contact" class="hover:text-gray-300">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <!-- Slideshow -->
+    <div class="swiper mySwiper mt-4">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="i1.jpg" alt="Slide 1" class="w-full"></div>
+            <div class="swiper-slide"><img src="i2.jpg" alt="Slide 2" class="w-full"></div>
+            <div class="swiper-slide"><img src="i3.jpg" alt="Slide 3" class="w-full"></div>
+        </div>
+    </div>
+    
+    <!-- Service Carousel -->
+    <section id="services" class="mt-10 text-center">
+        <h2 class="text-3xl font-bold mb-6" style="color: var(--primary-color);">Our Services</h2>
+        <div class="swiper serviceSwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide bg-white p-6 shadow-lg rounded-lg" style="border-left: 5px solid var(--secondary-color);">Service 1</div>
+                <div class="swiper-slide bg-white p-6 shadow-lg rounded-lg" style="border-left: 5px solid var(--accent-color);">Service 2</div>
+                <div class="swiper-slide bg-white p-6 shadow-lg rounded-lg" style="border-left: 5px solid var(--primary-color);">Service 3</div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Us -->
+    <section id="contact" class="mt-10 p-6 bg-gray-200 text-center">
+        <h2 class="text-3xl font-bold mb-4" style="color: var(--secondary-color);">Contact Us</h2>
+        <form class="max-w-lg mx-auto">
+            <input type="text" placeholder="Your Name" class="w-full p-2 mb-4 border rounded">
+            <input type="email" placeholder="Your Email" class="w-full p-2 mb-4 border rounded">
+            <textarea placeholder="Your Message" class="w-full p-2 mb-4 border rounded"></textarea>
+            <button class="btn p-2 rounded">Send Message</button>
+        </form>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer text-white text-center p-4 mt-10">
+        <p>&copy; 2025 MyBrand. All Rights Reserved.</p>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            loop: true,
+            autoplay: { delay: 3000 },
+        });
+        var serviceSwiper = new Swiper(".serviceSwiper", {
+            slidesPerView: 3,
+            spaceBetween: 20,
+            pagination: { clickable: true },
+        });
+    </script>
+</body>
+</html>
